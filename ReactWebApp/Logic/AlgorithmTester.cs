@@ -8,10 +8,9 @@ namespace ReactWebApp.Logic
     public static class AlgorithmTester
     {
         /// The Ask: Create an application that evaluates a restocking algorithm against
-        /// Refrostly’s actual order history from the past year.By keeping track of when Refrostly sells its
+        /// a provided actual order history from the past year.By keeping track of when orders come in and sell
         /// inventory (customer order events), and when it would restock its warehouse with new inventory
-        /// (inventory restocking events), this application will track a running inventory of all of Refrostly’s
-        /// products.
+        /// (inventory restocking events), this application will track a running inventory of all restock events.
         public static ResultValue VerifyOrdersAreStocked(IReadOnlyCollection<Order> orders,
             IReadOnlyCollection<Restock> restocks)
         {
