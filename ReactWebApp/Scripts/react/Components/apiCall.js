@@ -1,7 +1,7 @@
 ﻿const API_URL = 'https://localhost:12345/api/order/test';
 
 
-const apiCall = (orderData, restockData) =>
+const apiCall = (orderData, restockData, button) =>
     new Promise((resolve, reject) => {
         fetch(`${API_URL}`,
             {
@@ -22,6 +22,9 @@ const apiCall = (orderData, restockData) =>
               return resp.json()
             }) 
             .then((data) => {
+                button.setState(state => ({
+                    success: data.success
+                  }));
               resolve(data)                    
             })
             .catch((error) => {

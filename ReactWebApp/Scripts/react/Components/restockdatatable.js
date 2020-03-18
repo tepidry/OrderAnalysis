@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Button } from 'reactstrap';
+import { Table } from 'reactstrap';
 
 class RestockDataTable extends Component {
     render() {
@@ -12,7 +12,6 @@ class RestockDataTable extends Component {
               <th>Quantity</th>
               <th>Manufacturer</th>
               <th>Whole-sale</th>
-              {/* <th style={{ textAlign: "center" }}>Actions</th> */}
             </tr>
           </thead>
           <tbody>
@@ -21,8 +20,8 @@ class RestockDataTable extends Component {
                 <td colSpan="6" align="center"><b>No restock info yet</b></td>
               </tr>
               : items.map(item => (
-                <tr key={item.id}>
-                  <th scope="row">
+                <tr>
+                  <th>
                     {item.restock_date}
                   </th>
                   <td>
@@ -37,16 +36,6 @@ class RestockDataTable extends Component {
                   <td>
                     {item.wholesale_price}
                   </td>
-                  {/* <td align="center">
-                    <div>
-                      <RegistrationModal
-                        isNew={false}
-                        user={item}
-                        updateUserIntoState={this.props.updateState} />
-                      &nbsp;&nbsp;&nbsp;
-                      <Button color="danger" onClick={() => this.deleteItem(item.id)}>Delete</Button>
-                    </div>
-                  </td> */}
                 </tr>
               ))}
           </tbody>

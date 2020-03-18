@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Mvc;
-using Microsoft.AspNetCore.Cors;
 using Newtonsoft.Json;
+using ReactWebApp.Logic;
 using ReactWebApp.Models;
 using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
@@ -37,20 +35,13 @@ namespace ReactWebApp.Controllers
         {
         }
 
-        // POST api/users
-        //[HttpPost]
-        //[Route("analyze")]
-        //public async Task<ResultValue> Post([Microsoft.AspNetCore.Mvc.FromBody] Order order)
-        //{
-        //    return new ResultValue() { IsSuccess = true };
-        //}
 
         [HttpPost]
         [Route("test")]
         public async Task<ResultValue> Post([Microsoft.AspNetCore.Mvc.FromBody] object myData)
         {
             MyObject deserializeObject = JsonConvert.DeserializeObject<MyObject>(myData.ToString());
-            return new ResultValue() { IsSuccess = true };
+            return AlgorithmTester.VerifyOrdersAreStocked(deserializeObject.Orders.ToList().AsReadOnly(), deserializeObject.Restocks.ToList().AsReadOnly());
         }
     }
 }

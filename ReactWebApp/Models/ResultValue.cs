@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace ReactWebApp.Models
 {
@@ -9,6 +10,8 @@ namespace ReactWebApp.Models
     /// </summary>
     public class ResultValue
     {
+
+        [JsonProperty("success")]
         public bool IsSuccess { get; set; }
 
         public Dictionary<string, int> Inventory { get; set; }

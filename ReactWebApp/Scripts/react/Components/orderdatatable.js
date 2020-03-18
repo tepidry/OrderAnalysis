@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 
-class OrderDataTabl extends Component {
+class OrderDataTable extends Component {
     render() {
         const items = this.props.items;
         return <Table striped>
@@ -13,7 +13,6 @@ class OrderDataTabl extends Component {
               <th>Item</th>
               <th>Quantity</th>
               <th>Price</th>
-              {/* <th style={{ textAlign: "center" }}>Actions</th> */}
             </tr>
           </thead>
           <tbody>
@@ -41,20 +40,10 @@ class OrderDataTabl extends Component {
                   <td>
                     {item.item_price}
                   </td>
-                  {/* <td align="center">
-                    <div>
-                      <RegistrationModal
-                        isNew={false}
-                        user={item}
-                        updateUserIntoState={this.props.updateState} />
-                      &nbsp;&nbsp;&nbsp;
-                      <Button color="danger" onClick={() => this.deleteItem(item.id)}>Delete</Button>
-                    </div>
-                  </td> */}
                 </tr>
               ))}
           </tbody>
         </Table>;
       }
     }
-export default OrderDataTabl;
+export default OrderDataTable;

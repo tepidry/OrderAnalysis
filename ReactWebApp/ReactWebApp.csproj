@@ -254,6 +254,8 @@
     <Content Include="Scripts\react\Components\button.js" />
     <Content Include="Scripts\react\Components\fileGetter.js" />
     <Content Include="Scripts\react\Components\main.js" />
+    <Content Include="Scripts\react\Components\orderdatatable.js" />
+    <Content Include="Scripts\react\Components\restockdatatable.js" />
     <Content Include="Scripts\react\index.js" />
     <Content Include="Scripts\react\Components\runbutton.js" />
     <Content Include="Scripts\react\Components\styles.js" />
@@ -271,6 +273,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AlgorithmTester.cs" />
     <Compile Include="Models\MyObject.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Restock.cs" />
@@ -294,6 +297,8 @@
     <Content Include="Views\web.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\react\Components\restocks.json" />
+    <Content Include="Scripts\react\Components\orders.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -303,7 +308,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
